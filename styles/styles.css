@@ -24030,7 +24030,11 @@ a,button,.btn {
     width: 320px;
     display: flex;
     align-items: center;
-    transition: width .2s
+    transition: width .2s;
+    -webkit-transition: width .2s;
+    -moz-transition: width .2s;
+    -ms-transition: width .2s;
+    -o-transition: width .2s;
 }
 
 .app-header__logo .logo-src {
@@ -24040,6 +24044,13 @@ a,button,.btn {
     background-size: cover;
 }
 
+@media (max-width: 991.98px) {
+    .app-header__logo .logo-mobile {
+        display: block !important;
+        -ms-flex-order: 2;
+        order: 2;
+    }
+}
 .app-header__menu,.app-header__mobile-menu {
     display: none;
     padding: 0 1.5rem;
@@ -24346,9 +24357,9 @@ a,button,.btn {
     display: flex;
     z-index: 11;
     overflow: hidden;
-    min-width: 280px;
+    min-width: 320px;
     position: relative;
-    flex: 0 0 280px;
+    flex: 0 0 320px;
     margin-top: -60px;
     padding-top: 60px;
     transition: all .2s
@@ -24844,12 +24855,12 @@ a,button,.btn {
     overflow: hidden!important
 }
 
-.closed-sidebar:not(.closed-sidebar-mobile) .app-header .app-header__logo {
+.closed-sidebar:not(..closed-sidebar:not(.closed-sidebar-mobile) .app-header .app-header__logo .logo-srcmobile) .app-header .app-header__logo {
     width: 80px
 }
 
 .closed-sidebar:not(.closed-sidebar-mobile) .app-header .app-header__logo .logo-src {
-    display: none
+    display: none !important
 }
 
 .closed-sidebar:not(.closed-sidebar-mobile) .app-header .app-header__logo .header__pane {
@@ -53904,11 +53915,15 @@ span.multiselect-native-select select {
     }
 
     .app-sidebar {
-        flex: 0 0 280px!important;
-        width: 280px!important;
-        transform: translateX(-280px);
-        position: fixed
-    }
+        flex: 0 0 320px!important;
+        width: 320px!important;
+        transform: translateX(-320px);
+        position: fixed    ;
+        -webkit-transform: translateX(-320px);
+        -moz-transform: translateX(-320px);
+        -ms-transform: translateX(-320px);
+        -o-transform: translateX(-320px);
+}
 
     .app-sidebar .app-header__logo {
         display: none
@@ -53985,10 +54000,16 @@ span.multiselect-native-select select {
     }
 
     .app-header .app-header__logo {
-        display: none;
+        /* display: none; */
         order: 2;
         background: 0 0!important;
-        border: 0!important
+        border: 0!important;
+        place-content: center;
+    }
+
+    .app-header .app-header__logo .logo-src, .app-header .app-header__logo .header__pane{
+        display: none !important;
+
     }
 
     .app-header .app-header__content {

@@ -1,4 +1,4 @@
-document.querySelector('navbarGB').innerHTML =/*HTML*/`<div class="app-header header-shadow ">
+document.querySelector('navbarGB').outerHTML =/*HTML*/`<div class="app-header header-shadow ">
 <div class="app-header__logo">
     <div class="logo-src d-flex align-items-center" >
         <a class="d-flex align-items-center fw-bolder">
@@ -6,6 +6,9 @@ document.querySelector('navbarGB').innerHTML =/*HTML*/`<div class="app-header he
         <div class="text-gb-petroleo1"style="font-size:x-large">BiosAPP's</div>
 
         </a>
+    </div>
+    <div class="logo-mobile d-flex align-items-center d-none" >
+        <img src="./img/GRUPO_BIOS_LOGO_RGB_POSITIVO.png" alt="" style="height:3rem;">
     </div>
     <div class="header__pane ml-auto">
         <div>
@@ -175,21 +178,9 @@ document.querySelector('navbarGB').innerHTML =/*HTML*/`<div class="app-header he
     </div>
 </div>
 </div>`
-document.querySelector('sidebarGB').innerHTML =/*HTML*/`
+document.querySelector('sidebarGB').outerHTML =/*HTML*/`
 <div class="app-sidebar sidebar-shadow">
-            <div class="app-header__logo">
-                <div class="logo-src"></div>
-                <div class="header__pane ml-auto">
-                    <div>
-                        <button type="button" class="hamburger close-sidebar-btn hamburger--elastic is-active"
-                            data-class="closed-sidebar">
-                            <span class="hamburger-box">
-                                <span class="hamburger-inner"></span>
-                            </span>
-                        </button>
-                    </div>
-                </div>
-            </div>
+            
             <div class="app-header__mobile-menu">
                 <div>
                     <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
@@ -673,7 +664,7 @@ document.querySelector('sidebarGB').innerHTML =/*HTML*/`
             </div>
         </div>`
 
-document.querySelector('drawerGB').innerHTML =/*HTML*/`
+document.querySelector('drawerGB').outerHTML =/*HTML*/`
 <div class="app-drawer-wrapper">
 <div class="drawer-nav-btn">
 <button type="button" class="hamburger hamburger--elastic is-active">
@@ -686,3 +677,13 @@ document.querySelector('drawerGB').innerHTML =/*HTML*/`
 </div>
 <div class="app-drawer-overlay animated fadeIn d-none"></div>`
 
+
+
+function toggle_sidebar(element){
+    if(element.className.includes('is-active')){
+        $('.header__pane')[0].classList.add('ml-auto')
+    }else{
+        $('.header__pane')[0].classList.remove('ml-auto')
+    }
+}
+document.querySelectorAll('.close-sidebar-btn').forEach(e=>e.setAttribute('onclick','toggle_sidebar(this)'))
