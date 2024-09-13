@@ -69,7 +69,6 @@
     --gb-color5:#ECEBE0;
     --gb-color6: #0d6efd;
 
-    --gb-hamburguers:var(--gb-petroleo1);
 
     --gb-indigo: #6610f2;
     --gb-purple: #6f42c1;
@@ -136,7 +135,10 @@
     --gb-link-color: #0d6efd;
     --gb-link-hover-color: #0a58ca;
     --gb-code-color: #d63384;
-    --gb-highlight-bg: #fff3cd
+    --gb-highlight-bg: #fff3cd;
+
+    --gb-hamburguers:var(--gb-white);
+
 }
 
 /* Clases de texto personalizadas basadas en las variables del root */
@@ -54507,3 +54509,11 @@ span.multiselect-native-select select {
     /* background: url(../img/GRUPO_BIOS_LOGO_RGB_NEGATIVO_VERDE.png); */
     background-size: cover;
 }
+
+.icon-app {
+    width: 32px;
+    height: 32px;
+    background-image: url('../img/SVG/stats.Recurso 3.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
